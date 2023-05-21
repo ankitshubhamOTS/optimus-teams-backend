@@ -8,3 +8,7 @@ subscriptionInfo.json
 build
 .fx/configs/config.*.json
 .fx/states/state.*.json
+env/.env.*.user
+env/.env.local
+.backup/*
+/devTools/

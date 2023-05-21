@@ -3,54 +3,59 @@ import {
   CardFactory,
   TurnContext,
 } from "botbuilder";
-import AiService from "./ai.js";
-import Conversation from "./models/sql/conversation.model.js";
+import ApiService from "./api.js";
 
 export const prettyJSON = (data: unknown) => JSON.stringify(data, null, 2);
 
 export class TeamsBot extends TeamsActivityHandler {
-
+  // public aiService = new AiService();
+  public apiService = new ApiService();
   constructor() {
     super();
-    const api = new AiService();
     this.onMessage(async (context, next) => {
       console.log("Running with Message Activity.");
+      console.log(prettyJSON(context));
 
       const { activity } = context;
       let text = activity.text;
-      const fromId = activity.from.id;
-      const toId = activity.recipient.id;
+      const userId = activity.from.aadObjectId;
+      const botId = activity.recipient.id;
       const ts = activity.id; // We need epoch time.
+      const tenantId = activity.conversation.tenantId;
 
       const removedMentionText = TurnContext.removeRecipientMention(context.activity);
       if (removedMentionText) {
         // Remove the line break
         text = removedMentionText.toLowerCase().replace(/\n|\r/g, "").trim();
       }
-      // storing user-initiated conversation
-      await Conversation.create({
-        toId,
-        fromId,
-        text,
-        ts,
+      const attachments = activity.attachments.filter(attachment => attachment.contentType === "application/vnd.microsoft.teams.file.download.info" ).map((attachment) => {return {fileName: attachment.name, fileType: `${attachment.content.fileType}`, fileUrl: `${attachment.content.downloadUrl}`}});
+      const response = await this.apiService.query({
+        question: text,
+        userId,
+        botId,
+        attachments,
+        tenantId,
       });
+      console.log(`Response: ${response}`);
+      console.log(prettyJSON(response));
 
-      const response = await api.generateReply({
-        userId: fromId,
-        botId: toId,
-      });
+      let reply = 'I am sorry, I did not understand that.'
+      if (response && response.code === 200) {
+        const responseSource = response.data.responseSource;
+        if (responseSource === 'Pinecone') {
+          // Send the response.
+          reply = (response.data.data.text);
+        } else if (responseSource === 'OpenAI') {
+          // Send the response.
+          reply = (response.data.data.choices[0].text);
+        } else if (responseSource === 'None') {
+          if (response.data.data.event === 'FILE_UPLOAD_SUCCESS') {
+            reply = 'We have saved your file(s) in our database.'
+          }
+        }
+      }
 
-      const resourceResponse = await context.sendActivity(response);
-
-      // storing bot-initiated conversation
-      await Conversation.create({
-        toId: fromId,
-        fromId: toId,
-        text: response,
-        ts: resourceResponse.id, // This is the timestamp of the bot's response.
-      });
-
-
+      await context.sendActivity(reply);
       // By calling next() you ensure that the next BotHandler is run.
       await next();
     });

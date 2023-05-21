@@ -1,0 +1,101 @@
+{
+  "_respondedRef": {
+    "responded": false
+  },
+  "_turnState": {
+    "turn": {
+      "locale": "en-GB"
+    }
+  },
+  "_onSendActivities": [],
+  "_onUpdateActivity": [],
+  "_onDeleteActivity": [],
+  "_turn": "turn",
+  "_locale": "locale",
+  "bufferedReplyActivities": [],
+  "_adapter": {
+    "middleware": {
+      "middleware": [
+        null
+      ]
+    },
+    "settings": {
+      "appId": "58791288-5f0e-4801-a2d2-c32457b00522",
+      "appPassword": "5l68Q~eQ-tz5tmFJGtZJMATaezFQ06ra1dRoFbE-"
+    },
+    "credentials": {
+      "name": "MicrosoftAppCredentials",
+      "appId": "58791288-5f0e-4801-a2d2-c32457b00522",
+      "tenant": "botframework.com",
+      "oAuthEndpoint": "https://login.microsoftonline.com/botframework.com",
+      "oAuthScope": "https://api.botframework.com"
+    },
+    "credentialsProvider": {
+      "name": "SimpleCredentialProvider",
+      "appId": "58791288-5f0e-4801-a2d2-c32457b00522"
+    },
+    "isEmulatingOAuthCards": false,
+    "authConfiguration": {
+      "requiredEndorsements": []
+    }
+  },
+  "_activity": {
+    "text": "hi",
+    "textFormat": "plain",
+    "attachments": [
+      {
+        "contentType": "application/vnd.microsoft.teams.file.download.info",
+        "content": {
+          "downloadUrl": "https://cohesitydevdomain-my.sharepoint.com/personal/ankitshubham_cohesitydevdomain_onmicrosoft_com/_layouts/15/download.aspx?UniqueId=ebea377e-55af-4281-a388-e0baf933d455&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvY29oZXNpdHlkZXZkb21haW4tbXkuc2hhcmVwb2ludC5jb21AYzdiZjhjNmMtNjZkYi00ZTZhLWE2M2QtMjlhOGE3NDg2M2Q1IiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTY4NDU5NzE5MSIsImV4cCI6IjE2ODQ2MDA3OTEiLCJlbmRwb2ludHVybCI6IlFoNk1jQ0dEUkE1Q1BWTUpQVFMzb1dXenlKR0lTSWY5bGFOYUFXYitVbFE9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxODciLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik9XWXpaV1EzTlRFdE1XWTVZeTAwTVdZeUxUbGpaRGd0TnpabVkyVTFOVFJsWXpsaSIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJPV00yTkdVeVlqY3RNVEppTXkwME9URmtMVGcyT0RndFpUSmtZbUkzTURKallqZ3ciLCJhcHBfZGlzcGxheW5hbWUiOiJNaWNyb3NvZnQgVGVhbXMgU2VydmljZXMiLCJnaXZlbl9uYW1lIjoiQW5raXQiLCJmYW1pbHlfbmFtZSI6IlNodWJoYW0iLCJhcHBpZCI6ImNjMTVmZDU3LTJjNmMtNDExNy1hODhjLTgzYjFkNTZiNGJiZSIsInRpZCI6ImM3YmY4YzZjLTY2ZGItNGU2YS1hNjNkLTI5YThhNzQ4NjNkNSIsInVwbiI6ImFua2l0c2h1YmhhbUBjb2hlc2l0eWRldmRvbWFpbi5vbm1pY3Jvc29mdC5jb20iLCJwdWlkIjoiMTAwMzIwMDBCOURENjJGQSIsImNhY2hla2V5IjoiMGguZnxtZW1iZXJzaGlwfDEwMDMyMDAwYjlkZDYyZmFAbGl2ZS5jb20iLCJzY3AiOiJncm91cC53cml0ZSBhbGxzaXRlcy53cml0ZSBhbGxwcm9maWxlcy53cml0ZSIsInR0IjoiMiIsInVzZVBlcnNpc3RlbnRDb29raWUiOm51bGwsImlwYWRkciI6IjQwLjEyNi4zNS44OCJ9.NVhzRUc4Y2tpeDFUY29TZzJIWDhqcXQ1TFFHbHM1ZzVzclJzQUc3aVJiST0&ApiVersion=2.0",
+          "uniqueId": "ebea377e-55af-4281-a388-e0baf933d455",
+          "fileType": "pdf"
+        },
+        "contentUrl": "https://cohesitydevdomain-my.sharepoint.com/personal/ankitshubham_cohesitydevdomain_onmicrosoft_com/Documents/Microsoft Teams Chat Files/AI-backend-design-1.0.0.pdf",
+        "name": "AI-backend-design-1.0.0.pdf"
+      },
+      {
+        "contentType": "text/html",
+        "content": "<p>hi</p>"
+      }
+    ],
+    "type": "message",
+    "timestamp": "2023-05-20T15:39:53.114Z",
+    "localTimestamp": "2023-05-20T15:39:53.114Z",
+    "id": "1684597193099",
+    "channelId": "msteams",
+    "serviceUrl": "https://smba.trafficmanager.net/in/",
+    "from": {
+      "id": "29:10DLnWXQY2Hpi2H7Y74osvf2VH5_pygpnDl6Szw1CyH4szpmv286hzT3sr01mb1q0eUDVn4OLPkrSH0Siqo5L4g",
+      "name": "Ankit Shubham",
+      "aadObjectId": "9d76016c-472a-4b0d-9563-675e4b49a25a"
+    },
+    "conversation": {
+      "conversationType": "personal",
+      "tenantId": "c7bf8c6c-66db-4e6a-a63d-29a8a74863d5",
+      "id": "a:1pR78rE80UV8WUTZWU6uszTnpIozmHYApLwNeS8en-7vcIBdvdsPW8cmKbSJ8IMc-5WT7d2N8VW5O2hyWDq0itPnUiXgQSasdfIRzW6gv88C9Bx0gJ_bgFVmwoG0N7YJU"
+    },
+    "recipient": {
+      "id": "28:58791288-5f0e-4801-a2d2-c32457b00522",
+      "name": "chatgpt-teams-bot-local-debug-bot"
+    },
+    "entities": [
+      {
+        "locale": "en-GB",
+        "country": "GB",
+        "platform": "Web",
+        "timezone": "Asia/Calcutta",
+        "type": "clientInfo"
+      }
+    ],
+    "channelData": {
+      "tenant": {
+        "id": "c7bf8c6c-66db-4e6a-a63d-29a8a74863d5"
+      }
+    },
+    "locale": "en-GB",
+    "localTimezone": "Asia/Calcutta",
+    "rawTimestamp": "2023-05-20T15:39:53.1147609Z",
+    "rawLocalTimestamp": "2023-05-20T21:09:53.1147609+05:30",
+    "callerId": "urn:botframework:azure"
+  }
+}

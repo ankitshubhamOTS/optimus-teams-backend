@@ -42,12 +42,8 @@ export class TeamsBot extends TeamsActivityHandler {
       let reply = 'I am sorry, I did not understand that.'
       if (response && response.code === 200) {
         const responseSource = response.data.responseSource;
-        if (responseSource === 'Pinecone') {
-          // Send the response.
-          reply = (response.data.data.text);
-        } else if (responseSource === 'OpenAI') {
-          // Send the response.
-          reply = (response.data.data.choices[0].text);
+        if (['Pinecone', 'ChatGPT'].includes(responseSource)) {
+          reply = `${response.data.data.text}\n\nSource: ${responseSource}`;
         } else if (responseSource === 'None') {
           if (response.data.data.event === 'FILE_UPLOAD_SUCCESS') {
             reply = 'We have saved your file(s) in our database.'

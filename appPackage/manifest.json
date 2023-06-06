@@ -40,7 +40,20 @@
                         "team",
                         "groupchat"
                     ],
-                    "commands": []
+                    "commands": [
+                        {
+                            "title": "/list-files",
+                            "description": "Lists all your files"
+                        },
+                        {
+                            "title": "/delete-file",
+                            "description": "Deletes a file. Usage: /delete-file <file name>"
+                        },
+                        {
+                            "title": "/delete-all-files",
+                            "description": "Deletes all your files. Usage: /delete-all-files"
+                        }
+                    ]
                 }
             ]
         }

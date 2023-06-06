@@ -1,13 +1,13 @@
 // Import required packages
-import express from "express";
+import express from 'express';
 
 // Import required bot services.
 // See https://aka.ms/bot-services to learn more about the different parts of a bot.
-import { BotFrameworkAdapter, TurnContext } from "botbuilder";
+import { BotFrameworkAdapter, TurnContext } from 'botbuilder';
 
 // This bot's main dialog.
-import { TeamsBot } from "./teamsBot.js";
-import config from "./config.js";
+import { TeamsBot } from './teamsBot.js';
+import config from './config.js';
 
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about adapters.
@@ -25,15 +25,19 @@ const onTurnErrorHandler = async (context: TurnContext, error: Error) => {
 
   // Send a trace activity, which will be displayed in Bot Framework Emulator
   await context.sendTraceActivity(
-    "OnTurnError Trace",
+    'OnTurnError Trace',
     `${error}`,
-    "https://www.botframework.com/schemas/error",
-    "TurnError"
+    'https://www.botframework.com/schemas/error',
+    'TurnError'
   );
 
   // Send a message to the user
-  await context.sendActivity(`The bot encountered unhandled error:\n ${error.message}`);
-  await context.sendActivity("To continue to run this bot, please fix the bot source code.");
+  await context.sendActivity(
+    `The bot encountered unhandled error:\n ${error.message}`
+  );
+  await context.sendActivity(
+    'To continue to run this bot, please fix the bot source code.'
+  );
 };
 
 // Set the onTurnError for the singleton BotFrameworkAdapter.
@@ -50,7 +54,7 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 });
 
 // Listen for incoming requests.
-server.post("/api/messages", async (req, res) => {
+server.post('/api/messages', async (req, res) => {
   await adapter.processActivity(req, res, async (context) => {
     await bot.run(context);
   });
